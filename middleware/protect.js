@@ -5,7 +5,6 @@ module.exports = function (auth, spec) {
     return function protect (request, response, next) {
         console.log("Protect with spec:",spec);
         var params = {
-            authorization: request.headers.authorization
         }
         if (spec != undefined) {
             if (spec.groups) {
@@ -16,7 +15,10 @@ module.exports = function (auth, spec) {
             "guid": auth.SAMLAuthProjId,
             "path": "/ldap/auth",
             "method": "POST",
-            "params": params
+            "params": params,
+            "headers": {
+                'Authorization': request.headers.authorization
+            }
         }, function(err, body, service_res) {
             if (err) {
                 // An error occurred
