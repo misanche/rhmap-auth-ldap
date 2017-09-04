@@ -1,6 +1,6 @@
 {
   "name": "rhmap-auth-ldap",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "rhmap module to check the LDAP auth",
   "main": "index.js",
   "scripts": {

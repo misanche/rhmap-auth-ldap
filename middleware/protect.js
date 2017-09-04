@@ -12,7 +12,7 @@ module.exports = function (auth, spec) {
             }
         }
         fh.service({
-            "guid": auth.SAMLAuthProjId,
+            "guid": auth.LDAPAuthProjId,
             "path": "/ldap/auth",
             "method": "POST",
             "params": params,
